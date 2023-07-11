@@ -1,16 +1,21 @@
 # Use the official .NET Core SDK image as the base
-FROM mcr.microsoft.com/dotnet/sdk:5.0
-RUN chown -R appuser:appuser /app
+FROM mcr.microsoft.com/dotnet/sdk:5.0.400
+
 # Set up a non-root user
 RUN groupadd -g 1001 appuser && \
     useradd -r -u 1001 -g appuser appuser
+
+# Set the working directory
+WORKDIR /app
+
+# Change ownership of the working directory to the appuser
+RUN chown -R appuser:appuser /app
+
+# Switch to the appuser
 USER appuser
 
 # Copy the application files
 COPY . /app
-
-# Set the working directory
-WORKDIR /app
 
 # Build the application
 RUN dotnet build
