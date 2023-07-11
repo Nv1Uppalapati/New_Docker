@@ -9,7 +9,7 @@ RUN groupadd -g 1001 appuser && \
 WORKDIR /app
 
 # Change ownership of the working directory to the appuser
-RUN chown -R appuser:appuser /app /home/appuser
+RUN chown -R appuser:appuser /app
 
 # Switch to the appuser
 USER appuser
