@@ -6,10 +6,10 @@ RUN groupadd -g 1001 appuser && \
     useradd -r -u 1001 -g appuser appuser
 
 # Set the working directory
-WORKDIR /app
+WORKDIR /home/appuser
 
 # Change ownership of the working directory to the appuser
-RUN chown -R appuser:appuser /app
+RUN chown -R appuser:appuser /home/appuser
 
 # Switch to the appuser
 USER appuser
