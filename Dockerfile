@@ -1,6 +1,6 @@
 # Use the official .NET Core SDK image as the base
 FROM mcr.microsoft.com/dotnet/sdk:5.0
-
+RUN chown -R appuser:appuser /app
 # Set up a non-root user
 RUN groupadd -g 1001 appuser && \
     useradd -r -u 1001 -g appuser appuser
