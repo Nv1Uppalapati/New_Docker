@@ -20,3 +20,5 @@ spec:
         image: uppalapatinv1/kube:latest
         ports:
         - containerPort: 5000
+      imagePullSecrets:
+      - name: acr-secret
