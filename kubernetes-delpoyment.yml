@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
       - name:  new-docker-app
-        image: nv1uppalapati.azurecr.io/new_docker-app:latest
+        image: nv1uppalapati.azurecr.io/new-docker-app:latest
         ports:
         - containerPort: 5000
       imagePullSecrets:
