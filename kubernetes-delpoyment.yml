@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
       - name:  new-docker-app
-        image: uppalapatinv1/kube:latest
+        image: nv1uppalapati.azurecr.io/new_docker-app
         ports:
         - containerPort: 5000
       imagePullSecrets:
