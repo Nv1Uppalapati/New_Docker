@@ -6,7 +6,7 @@ metadata:
   labels:
     app: new-docker-app
 spec:
-  replicas: 2
+  replicas: 3
   selector:
     matchLabels:
       app: new-docker-app
