@@ -29,7 +29,7 @@ spec:
             name: new-docker-app-deployment
       containers:
       - name: new-docker-app
-        image: nv1uppalapati.azurecr.io/new_docker-app:latest
+        image: kubeassignment.azurecr.io/new_docker-app:latest
         ports:
         - containerPort: 5000
         livenessProbe:
