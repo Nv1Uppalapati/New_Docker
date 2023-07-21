@@ -1,0 +1,6 @@
+{
+    "recommendations": [
+        "kubernetes-tools.k8s",
+        "lunuan.kubernetes-templates"
+    ]
+}
