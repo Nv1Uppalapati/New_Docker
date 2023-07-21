@@ -24,7 +24,7 @@ spec:
       - name: init-setup
         image: busybox:latest
         command: ['sh', '-c', 'ls; pwd; sleep 10']
-        envFrom:  # Add this section to use the ConfigMap in the init container
+        envFrom:
         - configMapRef:
             name: new-docker-app-deployment
       containers:
@@ -44,6 +44,6 @@ spec:
             port: 80
           initialDelaySeconds: 15
           periodSeconds: 5
-        envFrom:  # Add this section to use the ConfigMap in the main container
+        envFrom:
         - configMapRef:
             name: new-docker-app-deployment
