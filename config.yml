@@ -4,5 +4,5 @@ metadata:
   name: new-docker-app-deployment
   namespace: nv1
 data:
-  key1: DB_HOST
-  
+  DB_HOST: key
+  # Add other configuration key-value pairs as needed

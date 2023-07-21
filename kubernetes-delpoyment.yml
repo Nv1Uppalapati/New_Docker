@@ -29,18 +29,17 @@ spec:
             name: new-docker-app-deployment
       containers:
       - name: new-docker-app
-        image: uppalapatinv1/kube:latest 
+        image: uppalapatinv1/kube:latest
         ports:
-        - containerPort: 80
+        - containerPort: 5000
         livenessProbe:
           httpGet:
             path: /_status/healthz
             port: 80
           initialDelaySeconds: 8
-          timeoutSeconds: 2
-          successThreshould: 1
-          failureThreshould: 3
           periodSeconds: 10
+          failureThreshold: 3  # Corrected field name
+          successThreshold: 1  # Corrected field name
         readinessProbe:
           httpGet:
             path: /readiness
@@ -51,9 +50,5 @@ spec:
         - name: new-docker-app-deployment
           valueFrom:
             configMapKeyRef:
-              name: new-docker-app-deployment
               key: DB_HOST
-        ports:
-        - containerPort: 5000
-
-
+              name: new-docker-app-deployment
