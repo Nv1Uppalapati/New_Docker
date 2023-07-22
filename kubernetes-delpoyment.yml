@@ -21,9 +21,9 @@ spec:
       labels:
         app: new-docker-app
     spec:
-      networkPolicy: .
+      networkPolicy: 
         type: Cluster
-      initContainers:
+      initContainers:      
       - name: init-setup
         image: busybox:latest
         command: ['sh', '-c', 'ls; pwd; sleep 10']
