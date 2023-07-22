@@ -16,8 +16,6 @@ spec:
     rollingUpdate:
       maxUnavailable: 25%
       maxSurge: 25%
-  networkPolicy:  # Move the networkPolicy field to this level
-    type: Cluster
   template:
     metadata:
       labels:
