@@ -16,13 +16,13 @@ spec:
     rollingUpdate:
       maxUnavailable: 25%
       maxSurge: 25%
+  networkPolicy:  # Move the networkPolicy field to this level
+    type: Cluster
   template:
     metadata:
       labels:
         app: new-docker-app
     spec:
-      networkPolicy:  # Move the networkPolicy field to this level
-        type: Cluster
       initContainers:
       - name: init-setup
         image: busybox:latest
