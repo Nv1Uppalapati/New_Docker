@@ -9,6 +9,15 @@ spec:
     matchLabels:
       app: new-docker-app
   policyTypes:
-  - Ingress
+    - Ingress
+    - Egress
   ingress:
-  - {}
+    - from:
+      - podSelector:
+          matchLabels:
+            app: new-docker-app
+  egress:
+    - to:
+      - podSelector:
+          matchLabels:
+            app: new-docker-app
