@@ -11,4 +11,5 @@ data:
     </source>
     <match **>
       @type stdout
-    </match>
+    </match>
+    

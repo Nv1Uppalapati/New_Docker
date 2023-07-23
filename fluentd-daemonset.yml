@@ -25,4 +25,4 @@ spec:
       volumes:
         - name: config-volume
           configMap:
-            name: fluentd-config
+            name: fluentd-config
