@@ -1,23 +1,16 @@
-# networkpolicy.yaml
+# network-policy.yaml
 apiVersion: networking.k8s.io/v1
 kind: NetworkPolicy
 metadata:
   name: new-docker-app-network-policy
-  namespace: nv1
 spec:
   podSelector:
     matchLabels:
       app: new-docker-app
   policyTypes:
-    - Ingress
-    - Egress
+  - Ingress
   ingress:
-    - from:
-      - podSelector:
-          matchLabels:
-            app: new-docker-app
-  egress:
-    - to:
-      - podSelector:
-          matchLabels:
-            app: new-docker-app
+  - from:
+    - podSelector:
+        matchLabels:
+          role: backend
