@@ -54,3 +54,7 @@ spec:
                 configMapKeyRef:
                   name: new-docker-app-deployment
                   key: DB_HOST
+      tolerations:  # Add the tolerations section to allow pods to be scheduled on the tainted node
+        - key: "special"
+          operator: "Exists"
+          effect: "NoSchedule"
