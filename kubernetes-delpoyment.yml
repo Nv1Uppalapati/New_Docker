@@ -29,6 +29,15 @@ spec:
                     operator: In
                     values:
                       - production
+        podAntiAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+            - labelSelector:
+                matchExpressions:
+                  - key: app
+                    operator: In
+                    values:
+                      - new-docker-app
+              topologyKey: "kubernetes.io/hostname"
       containers:
         - name: new-docker-app
           image: kubeassignment.azurecr.io/new_docker-app:latest
