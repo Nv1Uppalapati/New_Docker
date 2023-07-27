@@ -1,10 +1,10 @@
-apiVersion: policy/v1beta1
+apiVersion: policy/v1
 kind: PodDisruptionBudget
 metadata:
   name: new-docker-app-pdb
   namespace: nv1
 spec:
-  minAvailable: 1
   selector:
     matchLabels:
       app: new-docker-app
+  maxUnavailable: 1
