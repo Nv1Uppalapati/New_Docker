@@ -29,7 +29,7 @@ spec:
                     operator: In
                     values:
                       - production
-        podAntiAffinity:  # Add the podAntiAffinity section here
+        podAntiAffinity:
           requiredDuringSchedulingIgnoredDuringExecution:
             - labelSelector:
                 matchExpressions:
@@ -63,7 +63,3 @@ spec:
                 configMapKeyRef:
                   name: new-docker-app-deployment
                   key: DB_HOST
-      tolerations:  
-        - key: "special"
-          operator: "Exists"
-          effect: "NoSchedule"
